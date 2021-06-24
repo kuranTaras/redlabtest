@@ -6,11 +6,12 @@ $(window).on("load" , function () {
     example.addEventListener('mousemove', (e) => {
         let mouseX = e.offsetX;
         let mouseY = e.offsetY;
+        let offset = $('.order__button').offset()
+        let x = e.pageX - offset.left
+        let offsetY = $('.order__button').offset()
+        let y = e.pageY - offset.top
 
-        let percX = ((mouseX / example.clientWidth) * 100) + '%';
-        let percY = ((mouseY / example.clientHeight) * 100) + '%';
-
-        $('.order__button').css('transform', 'translate(' + percY + ',' + percX + ')');
+        $('.order__button').css('transform', 'translate(' + y + 'px' + ',' + x + 'px' + ')');
     });
 
 
