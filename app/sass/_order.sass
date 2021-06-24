@@ -5,35 +5,42 @@
   cursor: pointer
   left: 50%
   transform: translateX(-50%)
-  width: 195px
-  height: 195px
+  width: 400px
+  height: 200px
   display: flex
-  align-items: center
+  align-items: flex-end
   justify-content: center
-  border-radius: 50%
-  background: #5A30F0
-  transition-duration: 1s
-  border: 1px solid rgba(255, 255, 255, 0.1)
-  &:hover
-    transform: translateX(-50%)
-    bottom: 20px
-  span
-    font-family: TT Travels, sans-serif
-    font-style: normal
-    font-weight: 500
-    font-size: 18px
-    line-height: 130%
-    letter-spacing: 0.03em
-    text-transform: uppercase
-    color: #FFFFFF
-    text-align: center
-    animation-name: button
-    animation-duration: 20s
-    animation-timing-function: linear
-    animation-iteration-count: infinite
-.order_active
-  transform: translateX(-50%) scale(0.8)
-  bottom: -50px
+  .order__button
+    width: 195px
+    height: 195px
+    display: flex
+    align-items: center
+    justify-content: center
+    border-radius: 50%
+    background: #5A30F0
+    transition-duration: 1s
+    border: 1px solid rgba(255, 255, 255, 0.1)
+    span
+      font-family: TT Travels, sans-serif
+      font-style: normal
+      font-weight: 500
+      font-size: 18px
+      line-height: 130%
+      letter-spacing: 0.03em
+      text-transform: uppercase
+      color: #FFFFFF
+      text-align: center
+      animation-name: button
+      animation-duration: 20s
+      animation-timing-function: linear
+      animation-iteration-count: infinite
+  .order_active
+    transform: scale(0.8) translateY(70px)
+    bottom: -50px
+    &:hover
+      transform: scale(1)
+
+
 @keyframes button
   0%
     transform: rotateZ(0)

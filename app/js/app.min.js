@@ -1,6 +1,19 @@
 $(window).on("load" , function () {
 
 
+    let circle = document.querySelector('.order__button');
+    let example = document.querySelector('.order');
+    example.addEventListener('mousemove', (e) => {
+        let mouseX = e.offsetX;
+        let mouseY = e.offsetY;
+
+        let percX = ((mouseX / example.clientWidth) * 100) + '%';
+        let percY = ((mouseY / example.clientHeight) * 100) + '%';
+
+        $('.order__button').css('transform', 'translateX(' + percX + ')');
+        $('.order__button').css('transform', 'translateY(' + percY + ')');
+    });
+
 
 
 })
@@ -14,9 +27,9 @@ $(window).on('scroll', () => {
 
 
     if ($(window).scrollTop() > 100) {
-        $('.order').addClass('order_active')
+        $('.order__button').addClass('order_active')
     } else {
-        $('.order').removeClass('order_active')
+        $('.order__button').removeClass('order_active')
     }
 })
 
