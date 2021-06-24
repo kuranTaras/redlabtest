@@ -1,0 +1,74 @@
+.services
+  margin: 70px 0 150px 0
+  .container
+    max-width: 1320px
+    display: grid
+    grid-template-columns: 1fr 1fr 1fr 1fr
+    grid-gap: 40px
+    .services__item
+      cursor: pointer
+      height: 300px
+      position: relative
+      transition-duration: 0.5s
+      overflow: hidden
+      border-radius: 8px
+      transform: translateY(100px)
+      &:hover
+        .services__absolute
+          transform: translateX(0)
+        h2
+          transform: translateY(-100%)
+        .services__img
+          transform: translateY(100%)
+      &:first-child
+        .services__img
+          margin-left: 25px
+      &:nth-child(4)
+        .services__img
+          margin-left: 5px
+      h2
+        font-family: TT Travels, sans-serif
+        font-style: normal
+        font-weight: 500
+        font-size: 24px
+        line-height: 130%
+        text-align: center
+        color: #404040
+        transition-duration: 0.5s
+      .services__wrapper
+        display: flex
+        flex-direction: column
+        background: #F3F6FB
+        border-radius: 8px
+        padding: 20px 40px 0 40px
+        transition-duration: 0.25s
+        height: 300px
+      .services__img
+        margin-top: auto
+        transition-duration: 0.5s
+      .services__absolute
+        position: absolute
+        top: 0
+        left: 0
+        background: #5A30F0
+        width: 100%
+        height: 100%
+        border-radius: 8px
+        padding: 30px
+        transition-duration: 0.5s
+        transform: translateX(100%)
+        p
+          font-family: TT Travels, sans-serif
+          font-style: normal
+          font-weight: normal
+          font-size: 16px
+          line-height: 140%
+          color: #FFFFFF
+    .active
+      transform: translateY(0)
+      &:nth-child(2)
+        transition-delay: 0.1s
+      &:nth-child(3)
+        transition-delay: 0.2s
+      &:nth-child(4)
+        transition-delay: 0.3s

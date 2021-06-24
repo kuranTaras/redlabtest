@@ -1,0 +1,74 @@
+.header
+  position: fixed
+  width: 100%
+  top: 0
+  z-index: 10
+  .container
+    height: 70px
+    align-items: center
+    .header__logo
+      margin-right: 21.4px
+    .header__switch
+      background: #ffffff
+      border-radius: 48px
+      margin-right: 17px
+      display: flex
+      span
+        font-family: TT Travels, sans-serif
+        font-style: normal
+        font-weight: 500
+        font-size: 14px
+        line-height: 110%
+        color: #636C81
+        padding: 8px 12px
+        cursor: pointer
+        transition-duration: 0.3s
+      .active
+        background: #5A30F0
+        color: #ffffff
+        border-radius: 34px
+        &:not(:last-child)
+          margin-right: 4px
+    .header__menu
+      display: flex
+      margin-left: auto
+      a
+        font-family: TT Travels, sans-serif
+        font-style: normal
+        font-weight: 500
+        font-size: 16px
+        line-height: 120%
+        display: flex
+        align-items: center
+        letter-spacing: 0.2px
+        color: #404040
+        &:not(:last-child)
+          margin-right: 32px
+    .header__tel
+      margin-left: auto
+      a, span
+        font-family: TT Travels, sans-serif
+        font-style: normal
+        font-weight: 500
+        font-size: 16px
+        line-height: 120%
+        letter-spacing: 0.2px
+        color: #404040
+        padding: 7px 0
+      a
+        margin-right: 30px
+        position: relative
+        &:after
+          content: ''
+          position: absolute
+          width: 1.5px
+          height: 14px
+          background: #404040
+          right: -15px
+          top: 50%
+          transform: translateY(-50%)
+          cursor: default
+    .header__burger
+      cursor: pointer
+      padding: 11px 5px
+      margin-left: 32px
