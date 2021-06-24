@@ -7,7 +7,6 @@
     grid-gap: 40px
     .services__item
       cursor: pointer
-      height: 300px
       position: relative
       transition-duration: 0.5s
       overflow: hidden
@@ -23,9 +22,23 @@
       &:first-child
         .services__img
           margin-left: 25px
+          width: 151px
+          height: 151px
+      &:nth-child(2)
+        .services__img
+          margin: auto auto 0 auto
+          max-width: 188px
+          height: 155px
+      &:nth-child(3)
+        .services__img
+          margin: auto auto 0 auto
+          max-width: 211px
+          height: 175px
       &:nth-child(4)
         .services__img
           margin-left: 5px
+          height: 150px
+          max-width: 201px
       h2
         font-family: TT Travels, sans-serif
         font-style: normal
@@ -42,10 +55,14 @@
         border-radius: 8px
         padding: 20px 40px 0 40px
         transition-duration: 0.25s
-        height: 300px
+        height: 328px
       .services__img
         margin-top: auto
         transition-duration: 0.5s
+        img
+          width: 100%
+          height: 100%
+          object-fit: contain
       .services__absolute
         position: absolute
         top: 0
