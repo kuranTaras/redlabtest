@@ -10,8 +10,7 @@ $(window).on("load" , function () {
         let percX = ((mouseX / example.clientWidth) * 100) + '%';
         let percY = ((mouseY / example.clientHeight) * 100) + '%';
 
-        $('.order__button').css('transform', 'translateX(' + percX + ')');
-        $('.order__button').css('transform', 'translateY(' + percY + ')');
+        $('.order__button').css('transform', 'translate(' + percY + ',' + percX + ')');
     });
 
 
