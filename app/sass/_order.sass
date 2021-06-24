@@ -2,7 +2,6 @@
   position: fixed
   bottom: 20px
   z-index: 10
-  cursor: pointer
   left: 50%
   transform: translateX(-50%)
   width: 400px
@@ -10,7 +9,9 @@
   display: flex
   align-items: flex-end
   justify-content: center
+  transition-duration: 1s
   .order__button
+    position: relative
     width: 195px
     height: 195px
     display: flex
@@ -19,6 +20,7 @@
     border-radius: 50%
     background: #5A30F0
     transition-duration: 1s
+    cursor: pointer
     border: 1px solid rgba(255, 255, 255, 0.1)
     span
       font-family: TT Travels, sans-serif
@@ -34,12 +36,10 @@
       animation-duration: 20s
       animation-timing-function: linear
       animation-iteration-count: infinite
-  .order_active
-    transform: scale(0.8) translateY(70px)
-    bottom: -50px
-    &:hover
-      transform: scale(1)
-
+  .order_hover
+    transition-duration: 0.1s
+.order_active
+  bottom: -50px
 
 @keyframes button
   0%

@@ -1,19 +1,21 @@
 $(window).on("load" , function () {
 
-
-    let circle = document.querySelector('.order__button');
     let example = document.querySelector('.order');
-    example.addEventListener('mousemove', (e) => {
-        let mouseX = e.offsetX;
-        let mouseY = e.offsetY;
-        let offset = $('.order__button').offset()
-        let x = e.pageX - offset.left
-        let offsetY = $('.order__button').offset()
-        let y = e.pageY - offset.top
-
-        $('.order__button').css('transform', 'translate(' + y + 'px' + ',' + x + 'px' + ')');
+    $('.order').on('mousemove', (e) => {
+        const position = example.getBoundingClientRect();
+        const x = e.clientX - position.left - position.width / 2;
+        const y = e.clientY - position.top - position.height / 1.35 ;
+        $('.order__button').css('transform', 'translate(' + x * 0.5 + 'px' + ',' + y * 0.3 + 'px' + ') scale(1)');
+        $('.order__button').addClass('order_hover')
     });
-
+    $('.order').on('mouseleave', (e) => {
+        if ($('.order').hasClass('order_active')) {
+            $('.order__button').css('transform', 'translate(0) scale(0.8)');
+        } else {
+            $('.order__button').css('transform', 'translate(0) scale(1)');
+        }
+        $('.order__button').removeClass('order_hover')
+    })
 
 
 })
@@ -27,10 +29,11 @@ $(window).on('scroll', () => {
 
 
     if ($(window).scrollTop() > 100) {
-        $('.order__button').addClass('order_active')
+        $('.order__button').css('transform', 'scale(0.8)')
+        $('.order').addClass('order_active')
     } else {
-        $('.order__button').removeClass('order_active')
+        $('.order__button').css('transform', 'scale(1)')
+        $('.order').removeClass('order_active')
     }
 })
-
 
