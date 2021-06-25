@@ -1,9 +1,10 @@
 .header
-  position: fixed
+  position: absolute
   width: 100%
   top: 0
   z-index: 10
   padding-left: 24px
+  transition-duration: 0.5s
   .container
     height: 70px
     align-items: center
@@ -14,6 +15,7 @@
       border-radius: 48px
       margin-right: 17px
       display: flex
+      border: 1px solid #E2E8F0
       span
         font-family: TT Travels, sans-serif
         font-style: normal
@@ -73,3 +75,16 @@
       cursor: pointer
       padding: 11px 5px
       margin-left: 32px
+.header_active
+  background: #FFFFFF
+  position: fixed
+  box-shadow: 0px 2px 14px rgba(0, 0, 0, 0.07)
+  animation-name: menu
+  animation-duration: 0.5s
+@keyframes menu
+  0%
+    transform: translateY(-100%)
+  100%
+    transform: translateY(0)
+.header_hide
+  transform: translateY(-100%)
