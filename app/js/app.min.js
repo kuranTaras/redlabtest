@@ -37,11 +37,11 @@ $(window).on('scroll', () => {
     if ($(window).scrollTop() === 0) {
         $('.header').removeClass('header_active')
     }
-    if ($(window).scrollTop() >= $(document).height() - $(window).height()) {
+    if ($(window).scrollTop() >= $(document).height() - $(window).height() - 300) {
         $('body').addClass('body_active')
         let left = ($(window).width() - $('.how__img').width()) / 2
         console.log(left)
-        $('.how__img').css('transform', 'translateX(' + left + 'px)')
+        $('.how__img').css('transform', 'translate(' + left + 'px, -200px)')
     }
 })
 
