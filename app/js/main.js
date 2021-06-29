@@ -1,11 +1,10 @@
 $(window).on("load" , function () {
-
     let example = document.querySelector('.order');
     $('.order').on('mousemove', (e) => {
         const position = example.getBoundingClientRect();
         const x = e.clientX - position.left - position.width / 2;
         const y = e.clientY - position.top - position.height / 1.35 ;
-        $('.order__button').css('transform', 'translate(' + x * 0.7 + 'px' + ',' + y * 0.3 + 'px' + ') scale(1)');
+        $('.order__button').css('transform', 'translate(' + x * 0.7 + 'px' + ',' + y * 0.5 + 'px' + ') scale(1)');
         $('.order__button').addClass('order_hover')
     });
     $('.order').on('mouseleave', (e) => {
@@ -16,8 +15,12 @@ $(window).on("load" , function () {
         }
         $('.order__button').removeClass('order_hover')
     })
-
-
+    $('.how__link').each(function (index) {
+        $(this).on('click', () => {
+            $('.how__link').removeClass('how__link_active')
+            $(this).toggleClass('how__link_active')
+        })
+    })
 })
 $(window).on('scroll', () => {
     let top = $('.services').offset().top / 2
@@ -34,6 +37,12 @@ $(window).on('scroll', () => {
     if ($(window).scrollTop() === 0) {
         $('.header').removeClass('header_active')
     }
+    if ($(window).scrollTop() >= $(document).height() - $(window).height()) {
+        $('body').addClass('body_active')
+        let left = ($(window).width() - $('.how__img').width()) / 2
+        console.log(left)
+        $('.how__img').css('transform', 'translateX(' + left + 'px)')
+    }
 })
 
 $(window).on('mousewheel', (e) => {
@@ -46,7 +55,5 @@ $(window).on('mousewheel', (e) => {
             $('.header').addClass('header_hide')
         }
     }
-
-
 })
 
